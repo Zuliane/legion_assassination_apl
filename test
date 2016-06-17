@@ -1,0 +1,57 @@
+Name             : Rupture (id=1943) [Spell Family (8)] 
+Class            : Assassination Rogue
+School           : Physical
+Resource         : 25 Energy
+Resource         : 1 - 5 Combo Points
+Spell Level      : 22
+Range            : 5 yards
+GCD              : 1 seconds
+Duration         : 4 seconds
+Mechanic         : Bleed
+Affecting spells : Adrenaline Rush (13750), Hemorrhage (16511), Rogue Tier 6 Trinket (40460), Mastery: Executioner (76808), Vendetta (79140), Adrenaline Rush (186286), Serrated Edge (192315), Gushing Wound (192329), Blood of the Assassinated (192925), Deeper Stratagem (193531), Agonizing Poison (200803)
+Attributes       : ....x... ........ x.x..... ........   ........ .x...... ........ ...x.... 
+                 : ........ ........ ........ ........   ........ ..x..... ........ ........ 
+                 : ...x.... ........ ....x... ........   ........ ........ ........ ........ 
+                 : ........ ........ .......x ........   ........ ........ ........ ........ 
+                 : ........ .x..x... ........ ........   ........ ........ ........ ........ 
+                 : ........ ........ ........ ........   ........ ........ ........ ........ 
+Effects          :
+#1 (id=586)      : Apply Aura (6) | Periodic Damage: physical every 2 seconds (3)
+                   Base Value: 1 | Scaled Value: 1 | AP Coefficient: 0.27500 | Mechanic: Bleed | Target: Enemy(6)
+#2 (id=239409)   : Apply Aura (6) | Periodic Dummy: every 2 seconds (226)
+                   Base Value: 1 | Scaled Value: 1 | Mechanic: Bleed | Target: Enemy(6)
+#3 (id=293833)   : Trigger Spell: Rupture (64)
+                   Base Value: 0 | Scaled Value: 0 | Trigger Spell: 199672 | Target: Enemy(6)
+#4 (id=293834)   : Trigger Spell: Rupture (64)
+                   Base Value: 0 | Scaled Value: 0 | Misc Value: 160 | Trigger Spell: 199672 | Target: Enemy(6)
+#5 (id=331324)   : Trigger Spell: Rupture (64)
+                   Base Value: 0 | Scaled Value: 0 | Misc Value: 500 | Trigger Spell: 199672 | Target: Enemy(6)
+Description      : Finishing move that tears open the target, dealing Bleed damage over time. Lasts longer per combo point.
+
+   1 point  : ${4+$<bonus>*1*0.275*$AP*8/2} over 8 sec
+   2 points: ${12+$<bonus>*2*0.275*$AP*12/2} over 12 sec
+   3 points: ${24+$<bonus>*3*0.275*$AP*16/2} over 16 sec
+   4 points: ${40+$<bonus>*4*0.275*$AP*20/2} over 20 sec
+   5 points: ${60+$<bonus>*5*0.275*$AP*24/2} over 24 sec$?s193531[
+   6 points: ${84+$<bonus>*6*0.275*$AP*28/2} over 28 sec][]
+Tooltip          : Suffering $w1 damage every $t1 sec.
+Variables        : $resolve=$?s84601[${1.17}][${1}]
+$deeper=$?s193531[${1.2}][${1}]
+$bonus=${$<resolve>*(1+$@versadmg)*$<deeper>}
+
+Name             : Rupture (id=199672) [Hidden] 
+Class            : Rogue
+School           : Physical
+Range            : 100 yards
+Triggered by     : Rupture (1943)
+Attributes       : .......x ........ ........ ........   ........ ........ ........ ........ 
+                 : ........ ........ ........ ........   ........ ........ ........ ........ 
+                 : ........ ........ ........ ........   ........ ........ ........ ........ 
+                 : ........ ........ ........ ........   ........ ........ ........ ........ 
+                 : ........ ........ ........ ........   ........ ........ ........ ........ 
+                 : ........ ........ ........ ........   ........ ........ ........ ........ 
+                 : Hidden (7)
+Effects          :
+#1 (id=293832)   : Dummy (3)
+                   Base Value: 0 | Scaled Value: 0 | Target: Enemy(6)
+
