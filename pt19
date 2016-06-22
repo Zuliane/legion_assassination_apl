@@ -1,19 +1,19 @@
-rogue="Rogue_Assassination_T19P"
+rogue="Rogue_Assassination_T19_850ilvl"
 level=110
 race=blood_elf
 role=attack
 position=back
-talents=2210131
-artifact=43:137463:137472:137328:0:323:3:324:3:325:3:326:3:327:3:328:3:329:3:330:3:331:3:332:1:333:1:334:1:335:1:337:1:346:1:347:1:1276:1
+talents=2110131
+artifact=43:137463:137472:137328:0:323:3:324:3:325:3:326:3:327:3:328:3:329:3:330:6:331:3:332:1:333:1:334:1:335:1:337:1:346:1:347:1:1276:1
 spec=assassination
 
 
 #to do: optimize envenom uptime during kingsbane
 # enable multi target rotation
-# adjustments for expression exsanguinated
 # impact of Alacrity regarding Envenom/Elaborate Planning uptime
 # make Garrote to be cast from Stealth
 # increase the benefit of Envenom for Kingsbane while keeping the Intervall close to 45sec
+# align every Vanish to Exsanguinate
 
 # Executed before combat begins. Accepts non-harmful actions only.
 
@@ -36,8 +36,9 @@ actions+=/pool_resource,if=energy<90&cooldown.kingsbane.remains<3.5
 actions+=/pool_resource,for_next=1,extra_amount=90
 actions+=/kingsbane
 actions+=/arcane_torrent,if=debuff.vendetta.up&energy<60
-actions+=/vanish,if=time>10&energy>50&debuff.garrote.remains<5.4&combo_points<6
-actions+=/garrote,if=remains<5.4&combo_points<6|buff.vanish.up&combo_points<6&!dot.garrote.exsanguinated
+actions+=/vanish,if=energy>25&dot.rupture.refreshable&combo_points>5
+actions+=/rupture,if=buff.vanish.up&combo_points>5&refreshable
+actions+=/garrote,if=refreshable&combo_points<6&!dot.garrote.exsanguinated
 actions+=/hemorrhage,if=debuff.hemorrhage.down&combo_points<6
 actions+=/mutilate,if=(combo_points<5)
 actions+=/rupture,if=!exsanguinated&refreshable&combo_points>4
