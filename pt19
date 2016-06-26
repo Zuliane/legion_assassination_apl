@@ -47,7 +47,7 @@ actions+=/rupture,if=!exsanguinated&refreshable&combo_points>4
 actions+=/pool_resource,for_next=1,extra_amount=25
 actions+=/death_from_above,if=combo_points>4
 actions+=/pool_resource,for_next=1,extra_amount=80
-actions+=/envenom,if=combo_points>=5&energy>80&buff.envenom.remains<0.5&buff.elaborate_planning.remains<2&!dot.rupture.remains<2
+actions+=/envenom,if=combo_points>=5&energy>80&buff.envenom.remains<0.5&buff.elaborate_planning.remains<2
 actions+=/rupture,cycle_targets=1,if=spell_targets.fan_of_knives>1&!ticking&combo_points=5
 actions+=/marked_for_death,if=combo_points=0
 actions+=/rupture,cycle_targets=1,if=combo_points=5&remains<=duration*0.3&spell_targets.fan_of_knives>1
