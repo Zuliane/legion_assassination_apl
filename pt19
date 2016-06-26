@@ -30,7 +30,6 @@ actions=potion,name=draenic_agility,if=buff.bloodlust.react|target.time_to_die<4
 actions+=/blood_fury,if=debuff.vendetta.up
 actions+=/berserking,if=debuff.vendetta.up
 actions+=/vendetta,if=energy<30&time>10|time<10&dot.rupture.ticking
-
 actions+=/pool_resource,if=energy<90&cooldown.kingsbane.remains<3.5&time>10
 actions+=/pool_resource,for_next=1,extra_amount=90
 actions+=/kingsbane,if=time<10&dot.rupture.ticking|time>10&energy>90
