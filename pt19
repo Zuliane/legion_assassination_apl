@@ -10,14 +10,11 @@ spec=assassination
 
 #to do: optimize envenom uptime during kingsbane
 # enable multi target rotation
-# impact of Alacrity regarding Envenom/Elaborate Planning uptime
-# make Garrote to be cast from Stealth
 # increase the benefit of Envenom for Kingsbane while keeping the Intervall close to 45sec
-# align every Vanish to Exsanguinate
 
 # Executed before combat begins. Accepts non-harmful actions only.
 
-#actions.precombat=flask,type=greater_draenic_agility_flask
+actions.precombat=flask,type=greater_draenic_agility_flask
 actions.precombat+=/food,type=sleeper_sushi
 actions.precombat+=/apply_poison,lethal=deadly
 actions.precombat+=/snapshot_stats
